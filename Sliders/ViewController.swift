@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func sliderActionBlue(_ sender: Any) {
+    @IBAction func sliderActionBlue() {
         refreshTextForBlueColorLabel()
         refreshBackColorForResultView()
     }
