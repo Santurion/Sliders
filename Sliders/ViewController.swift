@@ -23,9 +23,71 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         resultView.layer.cornerRadius = 10
+        setupDefaultSliders()
+        setupTextForColors()
+        refreshBackColorForResultView()
      
     }
 
 
+    @IBAction func sliderActionRed() {
+        refreshTextForRedColorLabel()
+        refreshBackColorForResultView()
+    }
+    
+    
+    @IBAction func sliderActionGreen() {
+        refreshTextForGreenColorLabel()
+        refreshBackColorForResultView()
+    }
+    
+    
+    @IBAction func sliderActionBlue(_ sender: Any) {
+        refreshTextForBlueColorLabel()
+        refreshBackColorForResultView()
+    }
+    
+    private func setupDefaultSliders() {
+           redSlider.value = 0.5
+           redSlider.minimumValue = 0
+           redSlider.maximumValue = 1
+           redSlider.minimumTrackTintColor = .red
+           
+           greenSlider.value = 0.6
+           greenSlider.minimumValue = 0
+           greenSlider.maximumValue = 1
+           greenSlider.minimumTrackTintColor = .green
+           
+           blueSlider.value = 0.3
+           blueSlider.minimumValue = 0
+           blueSlider.maximumValue = 1
+           blueSlider.minimumTrackTintColor = .blue
+       }
+    private func setupTextForColors() {
+            refreshTextForRedColorLabel()
+            refreshTextForGreenColorLabel()
+            refreshTextForBlueColorLabel()
+        }
+    private func refreshTextForRedColorLabel() {
+           labelRed.text = String(format: "%.2f", redSlider.value)
+       }
+       
+       private func refreshTextForGreenColorLabel() {
+           labelGreen.text = String(format: "%.2f", greenSlider.value)
+       }
+       
+       private func refreshTextForBlueColorLabel() {
+           labelBlue.text = String(format: "%.2f", blueSlider.value)
+       }
+       
+    private func refreshBackColorForResultView() {
+           resultView.backgroundColor = UIColor(
+               red: CGFloat(redSlider.value),
+               green: CGFloat(greenSlider.value),
+               blue: CGFloat(blueSlider.value),
+               alpha: 1
+           )
+       }
+    
 }
 
