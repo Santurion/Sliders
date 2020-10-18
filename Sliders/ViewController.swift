@@ -29,36 +29,35 @@ class ViewController: UIViewController {
      
     }
 
-
-    @IBAction func sliderActionRed() {
+    @IBAction func sliderRedAcnion() {
         refreshTextForRedColorLabel()
         refreshBackColorForResultView()
     }
     
-    
-    @IBAction func sliderActionGreen() {
+   
+    @IBAction func sliderGreenAction() {
         refreshTextForGreenColorLabel()
         refreshBackColorForResultView()
     }
     
-    
-    @IBAction func sliderActionBlue() {
+    @IBAction func sliderBlueAction() {
         refreshTextForBlueColorLabel()
         refreshBackColorForResultView()
     }
     
+   
     private func setupDefaultSliders() {
-           redSlider.value = 0.5
+           redSlider.value = 0.0
            redSlider.minimumValue = 0
            redSlider.maximumValue = 1
            redSlider.minimumTrackTintColor = .red
            
-           greenSlider.value = 0.6
+           greenSlider.value = 0.0
            greenSlider.minimumValue = 0
            greenSlider.maximumValue = 1
            greenSlider.minimumTrackTintColor = .green
            
-           blueSlider.value = 0.3
+           blueSlider.value = 0.0
            blueSlider.minimumValue = 0
            blueSlider.maximumValue = 1
            blueSlider.minimumTrackTintColor = .blue
